@@ -1,9 +1,9 @@
 body {
   margin: 0;
-  font-family: Open-sans, sans-serif;
+  font-family: $base-font;
 }
 h1, h2, h3 {
-  font-family: Raleway, Helvetica, sans-serif;
+  font-family: $header-font;
 }
 h2 {
   font-size: 28px;
@@ -15,11 +15,11 @@ h2 {
   padding: 100px 0;
 }
 .wrapper-grey {
-  background: #F4F4F4;
+  background: $gray-light;
 }
 
 .features {
-  background-color: white;
+  background-color: $white;
   text-align: center;
   padding-top: 50px;
   padding-bottom: 50px;
@@ -30,13 +30,13 @@ h2 {
 }
 
 .card-wrapper {
-  background-color: #F4F4F4;
+  background-color: $gray-light;
   padding: 100px 0;
 }
 
 .bottom-features {
   text-align: center;
-  background-color: white;
+  background-color: $white;
   padding: 70px 0;
 }
 
