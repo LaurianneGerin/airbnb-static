@@ -12,22 +12,26 @@
   <div class="container">
     <div class="row">
       <div class="col-md-3">
-        <img class="stickers" src="images/globe.png" alt="globe symbol">
+        <!-- <img class="stickers" src="images/globe.png" alt="globe symbol"> -->
+        <%= image_tag "globe.png", alt: "globe" %>
         <h2>Discover the world</h2>
         <p>The earth is your new home.</p>
       </div>
       <div class="col-md-3">
-        <img class="stickers" src="images/dollar.png" alt="globe symbol">
+        <!-- <img class="stickers" src="images/dollar.png" alt="globe symbol"> -->
+        <%= image_tag "dollar.png", alt: "dollar" %>
         <h2>Pay online</h2>
         <p>No cash issues anymore.</p>
       </div>
       <div class="col-md-3">
-        <img class="stickers" src="images/beer.png" alt="globe symbol">
+        <!-- <img class="stickers" src="images/beer.png" alt="globe symbol"> -->
+        <%= image_tag "beer.png", alt: "beer" %>
         <h2>Meet People</h2>
         <p>Discover new culture and lifestyle.</p>
       </div>
       <div class="col-md-3">
-        <img class="stickers" src="images/heart.png" alt="globe symbol">
+        <!-- <img class="stickers" src="images/heart.png" alt="globe symbol"> -->
+        <%= image_tag "heart.png", alt: "heart" %>
         <h2>Share and Love</h2>
         <p>Join a community you will love.</p>
       </div>
@@ -41,51 +45,19 @@
   <h2 class="text-center">Your next trip</h2>
   <div class="container">
     <div class="row">
-
-
+      <% data.flats.each do |owner, flat| %>
       <div class="col-xs-12 col-sm-4">
-        <!-- insert <div class="card"> -->
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('images/card-paris.jpg');">
-          <div class="card-category">Paris</div>
+        <div class="card" style="background-image: url('<%= image_path flat.picture %>');">
+          <div class="card-category"><%= flat.city %></div>
           <div class="card-description">
-            <h2>Seb's Home</h2>
-            <p>Charming room with patio</p>
+            <h2><%= flat.name %></h2>
+            <p><%= flat.summary %></p>
           </div>
-          <img class="card-user avatar" src="images/seb.png">
-          <a class="card-link" href="#" ></a>
+          <%= image_tag flat.owner_picture, class:"card-user avatar avatar-large" %>
+          <%= link_to "#", "flats/#{owner}.html", class: "card-link" %>
         </div>
       </div>
-
-
-      <div class="col-xs-12 col-sm-4">
-        <!-- insert <div class="card"> -->
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('images/card-brussels.jpeg');">
-            <div class="card-category">Brussel</div>
-            <div class="card-description">
-              <h2>Anne's Home</h2>
-              <p>Lovely House</p>
-            </div>
-            <img class="card-user avatar" src="images/anne.png">
-            <a class="card-link" href="#" ></a>
-          </div>
-      </div>
-
-
-
-      <div class="col-xs-12 col-sm-4">
-        <!-- insert <div class="card"> -->
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('images/card-london.jpeg');">
-          <div class="card-category">London</div>
-          <div class="card-description">
-            <h2>Romain's Home</h2>
-            <p>Nice Flat in Piccadilly</p>
-          </div>
-          <img class="card-user avatar" src="images/romain.png">
-          <a class="card-link" href="#" ></a>
-        </div>
-      </div>
-
-
+      <% end %>
     </div>
   </div>
 </div>
