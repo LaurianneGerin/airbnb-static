@@ -1,0 +1,26 @@
+/* Footer design */
+.footer {
+  background-color: #333333;
+  color:white;
+  height: 100px;
+}
+
+.fa {
+  font-size: 30px;
+  margin: 20px;
+}
+
+.footer p {
+  margin-top: 17px;
+}
+
+.footer .fa:hover {
+  transform: scale(1.50);
+  color: #3071A9;
+  transition: all 200ms ease-in-out;
+}
+
+.bottom-line p {
+  margin-right: 10px;
+}
+
